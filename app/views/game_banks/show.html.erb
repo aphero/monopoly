@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Party:</strong>
+  <%= @game_bank.party %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @game_bank.description %>
+</p>
+
+<p>
+  <strong>Trans type:</strong>
+  <%= @game_bank.trans_type %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @game_bank.amount %>
+</p>
+
+<%= link_to 'Edit', edit_game_bank_path(@game_bank) %> |
+<%= link_to 'Back', game_banks_path %>

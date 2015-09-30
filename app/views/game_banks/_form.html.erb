@@ -1,0 +1,33 @@
+<%= form_for(@game_bank) do |f| %>
+  <% if @game_bank.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@game_bank.errors.count, "error") %> prohibited this game_bank from being saved:</h2>
+
+      <ul>
+      <% @game_bank.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :party %><br>
+    <%= f.text_field :party %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :trans_type %><br>
+    <%= f.select :trans_type, options_for_select([["Credit", "C"], ["Debit", "D"]]) %>
+  </div>
+  <div class="field">
+    <%= f.label :amount %><br>
+    <%= f.text_field :amount %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

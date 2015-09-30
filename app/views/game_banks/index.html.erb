@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Your Monopoly Transactions:</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Party</th>
+      <th>Description</th>
+      <th>Trans type</th>
+      <th>Amount</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @game_banks.each do |game_bank| %>
+      <tr>
+        <td><%= game_bank.party %></td>
+        <td><%= game_bank.description %></td>
+        <td><%= game_bank.trans_type %></td>
+        <td><%= game_bank.amount %></td>
+        <td><%= link_to 'Show', game_bank %></td>
+        <td><%= link_to 'Edit', edit_game_bank_path(game_bank) %></td>
+        <td><%= link_to 'Destroy', game_bank, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Transaction', new_game_bank_path %>
