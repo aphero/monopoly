@@ -32,6 +32,8 @@ gem 'puma'
 group :production do
   # Use PostGreSQL for Active Record
   gem 'pg'
+  # Heroku thing.  Go to 12factor.net to learn more.
+  gem 'rails_12factor'
 end
 
 group :development, :test do
