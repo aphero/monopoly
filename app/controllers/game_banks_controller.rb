@@ -9,6 +9,8 @@ class GameBanksController < ApplicationController
   # GET /game_banks
   def index
     @game_banks = GameBank.all
+    @balance = GameBank.balance
+    @nummies = GameBank.nummies
   end
 
   # GET /game_banks/1

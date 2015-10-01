@@ -6,9 +6,7 @@ class GameBankTest < ActiveSupport::TestCase
   end
 
   test "the nummies" do
-    a = GameBank.create()
-    b = GameBank.create()
-    assert_equal GameBank.nummies, 4
+    assert_equal GameBank.nummies, 5
   end
 
   test "debits list" do
@@ -45,5 +43,11 @@ class GameBankTest < ActiveSupport::TestCase
     b = GameBank.create(trans_type: 'D', amount: 23)
     assert_equal GameBank.max_expense, 350
     refute_equal GameBank.max_expense, 70
+  end
+
+  test "current month transaction count" do
+    assert_equal 4, GameBank.debits_this_month
+    GameBank.create!(party: "Bank", trans_type: "C", amount: 200)
+    assert_equal 5, GameBank.debits_this_month
   end
 end

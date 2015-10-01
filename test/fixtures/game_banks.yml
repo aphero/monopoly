@@ -5,9 +5,32 @@ one:
   description: Pass Go
   trans_type: C
   amount: 200
+  created_at: <%= Time.now - 1.month %>
+
+one_point_five:
+  party: Mason
+  description: Buy Boardwalk
+  trans_type: D
+  amount: 450
+  created_at: <%= Time.now %>
 
 two:
   party: Mason
   description: Buy Park Place
   trans_type: D
   amount: 350
+  created_at: <%= Time.now %>
+
+three:
+  party: Bank
+  description: Property Tax
+  trans_type: D
+  amount: 75
+  created_at: <%= Time.now %>
+
+four:
+  party: Bank
+  description: Pass Go
+  trans_type: C
+  amount: 200
+  created_at: <%= Time.now %>

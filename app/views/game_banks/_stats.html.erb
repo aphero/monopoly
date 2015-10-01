@@ -1,0 +1,17 @@
+<% if @game_banks.gameover? %>
+
+<img src="http://orig08.deviantart.net/e418/f/2012/254/a/d/classic_game_over_screen_by_el_tortuga-d5eeh9l.gif">
+<p>YOU LOST ALL DAT MONEY!</p>
+
+<% else %>
+
+<p>You have: $<%= @balance %></p>
+<p>Total # of transactions:
+  <%= @nummies %></p>
+<!-- CREATE AN ALERT HERE -->
+<!-- <p>You have spent $<%= @game_banks.dtots %>
+    this month.</p> -->
+<p>Largest expense ever: $<%= @game_banks.max_expense %></p>
+<p>You've spent the most money on:
+  <%= @game_banks.big_spender %>
+  <% end %>
