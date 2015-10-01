@@ -1,9 +1,9 @@
 <h1>DASHBOARD</h1>
 
-<p>You have: <%=  %></p>
-<p>Total # of transactions: <%= @balance %></p>
-<p><a href="">See transactions</a> <%= %></p><!-- LINK TO HERE -->
-<p><a href="">Create a new transaction</a> <%= %></p><!-- AND HERE -->
+<p>You have: $<%= @balance %></p>
+<p>Total # of transactions: <%= @nummies %></p>
+<p><%= link_to "See Transactions.", game_banks_path %></p>
+<p><%= link_to "New Transaction?", new_game_bank_path %></p>
 <!-- CREATE AN ALERT HERE -->
-<p>You have spent <%= %> this month.</p>
+<p>You have spent $<%= @game_banks.dtots %> this month.</p>
 <p>You spent <%= %> last month.</p>

@@ -2,6 +2,8 @@ class GameBanksController < ApplicationController
   before_action :set_game_bank, only: [:show, :edit, :update, :destroy]
 
   def dashboard
+    @balance = GameBank.balance
+    @nummies = GameBank.nummies
     @game_banks = GameBank.all
   end
   # GET /game_banks
