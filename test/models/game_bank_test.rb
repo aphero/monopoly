@@ -40,5 +40,10 @@ class GameBankTest < ActiveSupport::TestCase
     assert_equal GameBank.gameover?, true
   end
 
-  
+  test "max expense" do
+    a = GameBank.create(trans_type: 'D', amount: 70)
+    b = GameBank.create(trans_type: 'D', amount: 23)
+    assert_equal GameBank.max_expense, 350
+    refute_equal GameBank.max_expense, 70
+  end
 end
